@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Construction Price Calculator | River Pools Dealer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Pool Construction Calculator</h1>
+            <p class="subtitle">Get an instant estimate for your dream pool</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Model</div>
+            </div>
+            <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Size</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Features</div>
+            </div>
+            <div class="progress-step" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-label">Site</div>
+            </div>
+            <div class="progress-step" data-step="5">
+                <div class="step-number">5</div>
+                <div class="step-label">Upgrades</div>
+            </div>
+        </div>
+
+        <form id="poolCalculator" class="calculator-form">
+            <!-- Step 1: Pool Model -->
+            <div class="step active" data-step="1">
+                <h2>Select Pool Model</h2>
+                <p class="step-description">Choose your preferred River Pools fiberglass model</p>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="poolModel" value="classic" data-base-price="35000">
+                        <div class="card-content">
+                            <h3>Classic</h3>
+                            <p>Traditional rectangular design</p>
+                            <span class="price-badge">From $35,000</span>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="poolModel" value="freeform" data-base-price="42000">
+                        <div class="card-content">
+                            <h3>Freeform</h3>
+                            <p>Curved, natural shape</p>
+                            <span class="price-badge">From $42,000</span>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="poolModel" value="lounge" data-base-price="45000">
+                        <div class="card-content">
+                            <h3>Lounge</h3>
+                            <p>Built-in tanning ledge</p>
+                            <span class="price-badge">From $45,000</span>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="poolModel" value="sport" data-base-price="48000">
+                        <div class="card-content">
+                            <h3>Sport</h3>
+                            <p>Lap pool design</p>
+                            <span class="price-badge">From $48,000</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 2: Pool Size -->
+            <div class="step" data-step="2">
+                <h2>Select Pool Size</h2>
+                <p class="step-description">Choose the size that fits your space</p>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="poolSize" value="small" data-multiplier="0.85">
+                        <div class="card-content">
+                            <h3>Small</h3>
+                            <p>12' × 24' (288 sq ft)</p>
+                            <span class="size-badge">Perfect for small yards</span>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="poolSize" value="medium" data-multiplier="1.0">
+                        <div class="card-content">
+                            <h3>Medium</h3>
+                            <p>14' × 28' (392 sq ft)</p>
+                            <span class="size-badge">Most popular</span>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="poolSize" value="large" data-multiplier="1.25">
+                        <div class="card-content">
+                            <h3>Large</h3>
+                            <p>16' × 32' (512 sq ft)</p>
+                            <span class="size-badge">Spacious & luxurious</span>
+                        </div>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="poolSize" value="xl" data-multiplier="1.5">
+                        <div class="card-content">
+                            <h3>Extra Large</h3>
+                            <p>18' × 36' (648 sq ft)</p>
+                            <span class="size-badge">Maximum space</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 3: Pool Features -->
+            <div class="step" data-step="3">
+                <h2>Pool Features</h2>
+                <p class="step-description">Select the features you'd like</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="features" value="steps" data-price="1500">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Built-in Steps</span>
+                            <span class="checkbox-price">+$1,500</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="features" value="bench" data-price="2000">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Underwater Bench</span>
+                            <span class="checkbox-price">+$2,000</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="features" value="jets" data-price="3500">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Massage Jets</span>
+                            <span class="checkbox-price">+$3,500</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="features" value="lighting" data-price="2500">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">LED Lighting</span>
+                            <span class="checkbox-price">+$2,500</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="features" value="heater" data-price="4500">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Pool Heater</span>
+                            <span class="checkbox-price">+$4,500</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="features" value="cover" data-price="3000">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Automatic Cover</span>
+                            <span class="checkbox-price">+$3,000</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 4: Site Conditions -->
+            <div class="step" data-step="4">
+                <h2>Site Conditions</h2>
+                <p class="step-description">Tell us about your property</p>
+                
+                <div class="form-group">
+                    <label>Access Difficulty</label>
+                    <div class="options-grid">
+                        <label class="option-card">
+                            <input type="radio" name="access" value="easy" data-price="0">
+                            <div class="card-content">
+                                <h3>Easy</h3>
+                                <p>Standard access</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="access" value="moderate" data-price="2000">
+                            <div class="card-content">
+                                <h3>Moderate</h3>
+                                <p>Tight access</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="access" value="difficult" data-price="5000">
+                            <div class="card-content">
+                                <h3>Difficult</h3>
+                                <p>Limited access</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Soil Type</label>
+                    <div class="options-grid">
+                        <label class="option-card">
+                            <input type="radio" name="soil" value="normal" data-price="0">
+                            <div class="card-content">
+                                <h3>Normal</h3>
+                                <p>Standard soil</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="soil" value="rocky" data-price="3000">
+                            <div class="card-content">
+                                <h3>Rocky</h3>
+                                <p>Requires extra work</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="soil" value="clay" data-price="2000">
+                            <div class="card-content">
+                                <h3>Clay</h3>
+                                <p>Additional prep needed</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Slope/Grade</label>
+                    <div class="options-grid">
+                        <label class="option-card">
+                            <input type="radio" name="slope" value="level" data-price="0">
+                            <div class="card-content">
+                                <h3>Level</h3>
+                                <p>Flat yard</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="slope" value="moderate" data-price="2500">
+                            <div class="card-content">
+                                <h3>Moderate</h3>
+                                <p>Some slope</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="slope" value="steep" data-price="6000">
+                            <div class="card-content">
+                                <h3>Steep</h3>
+                                <p>Significant grading</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Upgrades & Services -->
+            <div class="step" data-step="5">
+                <h2>Upgrades & Services</h2>
+                <p class="step-description">Add professional services and upgrades</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="hardscape" data-price="8000">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Hardscape Patio</span>
+                            <span class="checkbox-price">+$8,000</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="decking" data-price="6000">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Pool Decking</span>
+                            <span class="checkbox-price">+$6,000</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="fencing" data-price="4500">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Safety Fencing</span>
+                            <span class="checkbox-price">+$4,500</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="electrical" data-price="3500">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Electrical Work</span>
+                            <span class="checkbox-price">+$3,500</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="landscaping" data-price="5000">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Landscaping</span>
+                            <span class="checkbox-price">+$5,000</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="outdoor-kitchen" data-price="12000">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Outdoor Kitchen</span>
+                            <span class="checkbox-price">+$12,000</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="fire-pit" data-price="3500">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Fire Pit Area</span>
+                            <span class="checkbox-price">+$3,500</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" name="services" value="shed" data-price="4000">
+                        <div class="checkbox-content">
+                            <span class="checkbox-label">Equipment Shed</span>
+                            <span class="checkbox-price">+$4,000</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 6: Results -->
+            <div class="step results-step" data-step="6">
+                <h2>Your Pool Estimate</h2>
+                <div class="results-container">
+                    <div class="estimate-card">
+                        <div class="estimate-header">
+                            <h3>Estimated Cost Range</h3>
+                        </div>
+                        <div class="estimate-amount">
+                            <span class="currency">$</span>
+                            <span id="lowEstimate" class="amount">0</span>
+                            <span class="range-separator">-</span>
+                            <span class="currency">$</span>
+                            <span id="highEstimate" class="amount">0</span>
+                        </div>
+                        <p class="estimate-note">*Final pricing subject to site inspection</p>
+                    </div>
+
+                    <div class="breakdown-section">
+                        <h3>Cost Breakdown</h3>
+                        <div id="costBreakdown" class="breakdown-list"></div>
+                    </div>
+
+                    <div class="cta-section">
+                        <p class="cta-text">Ready to get started?</p>
+                        <button type="button" class="btn btn-primary" onclick="window.location.reload()">Start New Estimate</button>
+                        <button type="button" class="btn btn-secondary" onclick="window.print()">Print Estimate</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
